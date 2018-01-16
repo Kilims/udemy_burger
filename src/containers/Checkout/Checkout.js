@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from '../../containers/Checkout/ContactData/ContactData';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import Aux from '../../hoc/_Aux/_Aux';
 
 class Checkout extends Component{
     checkoutCancelledHandler = () => {
@@ -15,20 +16,24 @@ class Checkout extends Component{
     }
 
     render() {
-        return (
-            <div>
-                <CheckoutSummary
-                    onCheckoutContinued={this.checkoutContinuedHandler}
-                    onCheckoutCancelled={this.checkoutCancelledHandler}
-                    ingredients={this.props.ings} />
-                {/* <Route
+        let summary = <Redirect to="/" />
+        if (this.props.ings) {
+            summary = (
+                <Aux>
+                    <CheckoutSummary
+                        onCheckoutContinued={this.checkoutContinuedHandler}
+                        onCheckoutCancelled={this.checkoutCancelledHandler}
+                        ingredients={this.props.ings} />
+                    <Route
+                        path={this.props.match.path + '/contact-data'}
+                        component={ContactData} />
+                    {/* <Route
                     path={this.props.match.path + '/contact-data'}
-                    render={props => (<ContactData totalPrice={Number.parseFloat(this.state.totalPrice).toFixed(2) ingredients={this.state.ingredients {...this.props}}})} /> */}
-                <Route
-                    path={this.props.match.path + '/contact-data'}
-                    component={ContactData} />
-            </div>
-        )
+                    render={props => (<ContactData totalPrice={Number.parseFloat(this.state.totalPrice).toFixed(2) ingredients={this.state.ingredients {...this.props}}})} /> */}                
+                </Aux>                
+            )
+        }
+        return summary;
     }
 }
 
