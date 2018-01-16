@@ -1,0 +1,46 @@
+{
+  "orders": [
+    {
+      "ingredients": {
+        "salad": 1,
+        "cheese": 1,
+        "meat": 2,
+        "bacon": 2
+      },
+      "price": 8.9,
+      "orderData": {
+        "name": "Kilims",
+        "street": "123123",
+        "zipcode": "12332",
+        "country": "123132",
+        "email": "123@aqq.com",
+        "deliveryMethod": ""
+      },
+      "id": 1
+    },
+    {
+      "ingredients": {
+        "salad": 1,
+        "cheese": 1,
+        "meat": 1,
+        "bacon": 1
+      },
+      "price": 6.9,
+      "orderData": {
+        "name": "123",
+        "street": "123213",
+        "zipcode": "12332",
+        "country": "123213",
+        "email": "123@qqq321",
+        "deliveryMethod": "cheapest"
+      },
+      "id": 2
+    }
+  ],
+  "ingredients": {
+    "salad": 0,
+    "bacon": 0,
+    "cheese": 0,
+    "meat": 0
+  }
+}
