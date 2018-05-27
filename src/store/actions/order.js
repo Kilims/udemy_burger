@@ -69,10 +69,9 @@ export const fetchOrders = () => {
             const fetchedOrders = [];
             for (const key of res.data) {
                 fetchedOrders.push({
-                    ...res.data[key],
-                    id: key
+                    ...key
                 });
-            }
+            }            
             dispatch(fetchOrderSuccess(fetchedOrders));            
         })
         .catch(err => {

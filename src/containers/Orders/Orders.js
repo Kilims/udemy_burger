@@ -17,12 +17,10 @@ class Orders extends Component{
         let orders = <Spinner />
         if (!this.props.loading) {
             orders = this.props.orders.map((order, i) => {
-                console.log("order.id", order.id);
-                
                 return <Order
                     key={order.id + i}
-                    ingredients={order.id.ingredients}
-                    price={order.id.price} />
+                    ingredients={order.ingredients}
+                    price={order.price} />
             })
         }
         return (

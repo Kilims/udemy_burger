@@ -6,7 +6,7 @@ import Button from '../../UI/Button/Button';
 export default class OrderSummary extends Component {
 
     componentWillUpdate() {
-        console.log('[Modal] Will Update')
+        //console.log('[Modal] Will Update')
     }
 
     render() {
