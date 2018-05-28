@@ -11,5 +11,8 @@ export {
 } from './order.js'
 
 export {
-    auth
+    auth,
+    logout,
+    setAuthRedirectPath,
+    authCheckState
 } from './auth';
