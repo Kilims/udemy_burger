@@ -5,7 +5,6 @@ import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSumm
 import ContactData from '../../containers/Checkout/ContactData/ContactData';
 import { Route, Redirect } from 'react-router-dom';
 import Aux from '../../hoc/_Aux/_Aux';
-//import * as action from '../../store/actions';
 
 class Checkout extends Component{
     
